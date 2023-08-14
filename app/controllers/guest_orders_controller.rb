@@ -1,0 +1,2 @@
+class GuestOrdersController < ApplicationController
+end
