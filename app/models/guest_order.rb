@@ -1,0 +1,2 @@
+class GuestOrder < ApplicationRecord
+end
