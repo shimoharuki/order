@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_14_022511) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_14_030252) do
   create_table "guest_orders", force: :cascade do |t|
     t.string "name"
     t.string "takoyaki_6s"
@@ -25,6 +25,27 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_14_022511) do
     t.string "sobamesi"
     t.string "beer"
     t.string "happoshu"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "takoyaki_toppings", force: :cascade do |t|
+    t.integer "guest_order_id"
+    t.integer "topping_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guest_order_id", "topping_id"], name: "index_takoyaki_toppings_on_guest_order_id_and_topping_id", unique: true
+    t.index ["guest_order_id"], name: "index_takoyaki_toppings_on_guest_order_id"
+    t.index ["topping_id"], name: "index_takoyaki_toppings_on_topping_id"
+  end
+
+  create_table "toppings", force: :cascade do |t|
+    t.string "plane"
+    t.string "sauce"
+    t.string "soy_sauce"
+    t.string "mayonnaise"
+    t.string "flakes"
+    t.string "green_seaweed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
