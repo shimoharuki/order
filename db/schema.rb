@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_14_030252) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_14_042052) do
   create_table "guest_orders", force: :cascade do |t|
     t.string "name"
     t.string "takoyaki_6s"
@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_14_030252) do
     t.string "happoshu"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "total"
   end
 
   create_table "takoyaki_toppings", force: :cascade do |t|

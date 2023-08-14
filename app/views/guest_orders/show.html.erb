@@ -1,0 +1,22 @@
+<div class="container pt-5">
+  <div class="row mb-3">
+    <div class="col-lg-8 offset-lg-2">
+      <article class="card">
+        <div class="card-body">
+          <div class='row'>
+            <div class='col-md-9'>
+              <h3><%=@guest_order.name%>様</h3>
+              <h2 class="text-primary">¥<%=@guest_order.total%>円</h2>
+            </div>
+          </div>
+          <% @menu_items.each do |item, label| %>
+            <% unless @guest_order.send(item).blank? %>
+              <h4 class="pt-5"><%= label %></h4>
+              <%= @guest_order.send(item) %>個
+            <% end %>
+          <% end %>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>

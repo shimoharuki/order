@@ -1,0 +1,60 @@
+<%= form_with  model:guest_order, local: true do |f| %>
+    <div class="form-group">
+      <%= f.label :'名前' %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <h2 class='text-primary'>たこ焼き</h2>
+    <div class="form-group">
+      <%= f.label :'たこ焼き6個入り(¥350)' %>
+      <%= f.text_field :takoyaki_6s, class: 'form-control'%>
+    </div> 
+    <div class="form-group">
+      <%= f.label :'たこ焼き8個入り(¥400)' %>
+      <%= f.text_field :takoyaki_8s, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <%= f.label :'たこ焼き10個入り(¥500)' %>
+        <%= f.text_field :takoyaki_10s, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <%= f.label :'たこ焼き12個入り(¥600)' %>
+        <%= f.text_field :takoyaki_12s, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <%= f.label :'あげたこ(¥200)' %>
+        <%= f.text_field :fried_takoyaki, class: 'form-control'%>
+    </div> 
+    <h2 class='text-danger'>冷凍たこ焼き</h2>
+    <div class="form-group">
+        <%= f.label :'冷凍たこ焼き(¥1500)' %>
+        <%= f.text_field :cold_takoyaki, class: 'form-control'%>
+    </div> 
+    <h2 class='text-success'>焼きそば</h2>
+    <div class="form-group">
+        <%= f.label :'焼きそば(¥450)' %>
+        <%= f.text_field :yakisoba, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <%= f.label :'焼きそば1.5玉(¥500)' %>
+        <%= f.text_field :yakisoba_1_half, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <%= f.label :'焼きそば卵入り(¥500)' %>
+        <%= f.text_field :yakisoba_egg, class: 'form-control'%>
+    </div>
+    <h2 class='text-warning'>そば飯</h2>
+    <div class="form-group">
+        <%= f.label :'そば飯(¥600)' %>
+        <%= f.text_field :sobamesi, class: 'form-control'%>
+    </div>
+    <h2 class='text-info'>飲み物</h2>
+    <div class="form-group">
+        <%= f.label :'ビール缶(¥300)' %>
+        <%= f.text_field :beer, class: 'form-control'%>
+    </div>
+    <div class="form-group">
+        <%= f.label :'発泡酒(¥200)' %>
+        <%= f.text_field :happoshu, class: 'form-control'%>
+    </div>
+    <%= f.submit '注文作成', class: 'btn btn-primary' %>
+  <% end %>
