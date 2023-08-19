@@ -10,7 +10,7 @@
             </div>
           </div>
           <% @menu_items.each do |item, label| %>
-            <% unless @guest_order.send(item).blank? %>
+            <% unless @guest_order.send(item) == "0" %>
               <h4 class="pt-5"><%= label %></h4>
               <%= @guest_order.send(item) %>個
             <% end %>
