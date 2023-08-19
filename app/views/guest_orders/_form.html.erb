@@ -1,0 +1,60 @@
+<%= form_with  model:guest_order, local: true do |f| %>
+    <div class="form-group">
+      <%= f.label :'名前' %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
+    <h2 class='text-primary'>たこ焼き</h2>
+    <div class="form-group">
+      <%= f.label :'たこ焼き6個入り(¥350)' %>
+      <%= f.select :takoyaki_6s, options_for_select(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], @guest_order.takoyaki_6s), {}, class: 'form-control' %>
+    </div> 
+    <div class="form-group">
+      <%= f.label :'たこ焼き8個入り(¥400)' %>
+      <%= f.select :takoyaki_8s, options_for_select(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], @guest_order.takoyaki_8s), {}, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :'たこ焼き10個入り(¥500)' %>
+        <%= f.select :takoyaki_10s, options_for_select(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], @guest_order.takoyaki_10s), {}, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :'たこ焼き12個入り(¥600)' %>
+        <%= f.select :takoyaki_12s, options_for_select(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], @guest_order.takoyaki_12s), {}, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :'あげたこ(¥200)' %>
+        <%= f.select :fried_takoyaki, options_for_select(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], @guest_order.fried_takoyaki), {}, class: 'form-control' %>
+    </div> 
+    <h2 class='text-danger'>冷凍たこ焼き</h2>
+    <div class="form-group">
+        <%= f.label :'冷凍たこ焼き(¥1500)' %>
+        <%= f.select :cold_takoyaki, options_for_select(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], @guest_order.cold_takoyaki), {}, class: 'form-control' %>
+    </div> 
+    <h2 class='text-success'>焼きそば</h2>
+    <div class="form-group">
+        <%= f.label :'焼きそば(¥450)' %>
+        <%= f.select :yakisoba, options_for_select(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], @guest_order.yakisoba), {}, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :'焼きそば1.5玉(¥500)' %>
+        <%= f.select :yakisoba_1_half, options_for_select(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], @guest_order.yakisoba_1_half), {}, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :'焼きそば卵入り(¥500)' %>
+        <%= f.select :yakisoba_egg, options_for_select(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], @guest_order.yakisoba_egg), {}, class: 'form-control' %>
+    </div>
+    <h2 class='text-warning'>そば飯</h2>
+    <div class="form-group">
+        <%= f.label :'そば飯(¥600)' %>
+        <%= f.select :sobamesi, options_for_select(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], @guest_order.sobamesi), {}, class: 'form-control' %>
+    </div>
+    <h2 class='text-info'>飲み物</h2>
+    <div class="form-group">
+        <%= f.label :'ビール缶(¥300)' %>
+        <%= f.select :beer, options_for_select(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], @guest_order.beer), {}, class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= f.label :'発泡酒(¥200)' %>
+        <%= f.select :happoshu, options_for_select(["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10"], @guest_order.happoshu), {}, class: 'form-control' %>
+    </div>
+    <%= f.submit '注文作成', class: 'btn btn-primary' %>
+<% end %>
