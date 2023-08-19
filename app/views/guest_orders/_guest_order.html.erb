@@ -1,0 +1,13 @@
+<div class="container mt-5">
+  <div class="row">
+    <% @guest_orders.each do |guest_order| %>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to guest_order.name, guest_order_path(guest_order), class: 'navbar-brand mb-0 h1 text-info'  %>様</h5>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

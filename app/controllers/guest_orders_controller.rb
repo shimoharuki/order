@@ -1,6 +1,16 @@
 class GuestOrdersController < ApplicationController
+    def index
+      @guest_orders = GuestOrder.all
+    end
+
     def new 
       @guest_order = GuestOrder.new
+    end
+
+    def destroy
+      @guest_order = GuestOrder.find(params[:id])
+      @guest_order.destroy!
+      redirect_to guest_orders_path, status: :see_other 
     end
   
     def create 
@@ -8,6 +18,21 @@ class GuestOrdersController < ApplicationController
       @guest_order.total = 0
       calculate_order_total
       if @guest_order.save
+        session[:guest_order_id] = @guest_order.id
+        redirect_to guest_order_path(@guest_order)
+      else
+        flash.now['danger'] = '失敗しました'
+        render :new
+      end
+    end
+
+    def edit
+      @guest_order = GuestOrder.find(params[:id])
+    end
+
+    def update
+      @guest_order = GuestOrder.find(params[:id])
+      if @guest_order.update(guest_order_params)
         session[:guest_order_id] = @guest_order.id
         redirect_to guest_order_path(@guest_order)
       else
